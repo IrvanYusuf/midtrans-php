@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Redirect /crud-simple/<filename>.php to /crud-simple/src/pages/<filename>.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)\.php$ /crud-simple/src/pages/$1.php [L]
+
+# Redirect /folder[/idUser] to /src/pages/folder/index.php with parameter
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)(?:/([^/]*))?$ /crud-simple/src/pages/$1/index.php/$2 [L,QSA]

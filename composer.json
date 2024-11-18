@@ -1,0 +1,6 @@
+{
+    "require": {
+        "ramsey/uuid": "^4.7",
+        "midtrans/midtrans-php": "^2.5"
+    }
+}
